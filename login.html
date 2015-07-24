@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">	
+		<title>Inicio y validacion con JQuery</title>
+		<script type="text/javascript" scr="jquery-1.11.3.js"></script>
+		<!-- <script type="text/javascript" scr="js/jquery-2.1.4.min.js"></script>  -->
+		<link rel="stylesheet" type="text/css" href="login1.css">
+
+	<script>
+		$(document).ready(function(){ 
+			$("#bEnviar").click(function(){ 
+				var nombre = $("#itNombre").val();
+				var password = $("#itPassword").val();
+				if (nombre == "") {
+					$("#mensaje1").fadeIn();
+					return false;
+				}else{
+					$("#mensaje1").fadeOut();
+					if (password == "") {
+						$("#mensaje2").fadeIn();
+						return false; 
+					}
+				}
+			});
+		});
+	</script>
+
+	</head>
+	<body>
+		<div id="container">
+			<form id="miFormulario">
+				<label>Nombre</label><br />
+				<input type="text" id="itNombre" class="campo"/><br />
+				<div id="mensaje1" class="errores">Falta NOMBRE</div>
+
+				<label>Password</label><br />
+				<input type="text" id="itPassword" class="campo"/><br />
+				<div id="mensaje2" class="errores">Falta PASSWORD</div>
+
+				<label>Asunto</label><br />
+				<input type="text" id="itAsunto" class="campo"/><br />
+				<div id="mensaje3" class="errores">Falta ASUNTO</div>
+
+				<input type="submit" id="bEnviar" value="Entrar" class="boton"/>
+			</form>
+		</div>
+	</body>
+</html>
