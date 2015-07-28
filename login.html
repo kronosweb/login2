@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
+		
 		<meta charset="utf-8">	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/login.css">
 		<title>Inicio y validacion con JQuery</title>
-		<script type="text/javascript" scr="jquery-1.11.3.js"></script>
-		<!-- <script type="text/javascript" scr="js/jquery-2.1.4.min.js"></script>  -->
-		<link rel="stylesheet" type="text/css" href="login1.css">
+		
+	</head>
+	<body>
+		<div id="container" class="jumbotron loginbox">
+			<form id="miFormulario">
+				<label>Nombre</label><br />
+				<input type="text" id="itNombre" class="form-control"/><br />
+				<div id="mensaje1"Ingresar class="errores">Falta NOMBRE</div>
 
-	<script>
-		$(document).ready(function(){ 
-			$("#bEnviar").click(function(){ 
+				<label>Password</label><br />
+				<input type="text" id="itPassword" class="form-control"/><br />
+				<div id="mensaje2" class="errores">Falta PASSWORD</div>
+
+				<button type="button" id="bEnviar" value="Entrar" class="btn btn-success">Ingresar</button> 
+			</form>
+		</div>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){
+			$("#bEnviar").click(function(){
 				var nombre = $("#itNombre").val();
 				var password = $("#itPassword").val();
 				if (nombre == "") {
@@ -19,31 +37,13 @@
 					$("#mensaje1").fadeOut();
 					if (password == "") {
 						$("#mensaje2").fadeIn();
-						return false; 
+						return false;
+					}else{
+						$("#mensaje2").fadeOut();
 					}
 				}
 			});
 		});
 	</script>
-
-	</head>
-	<body>
-		<div id="container">
-			<form id="miFormulario">
-				<label>Nombre</label><br />
-				<input type="text" id="itNombre" class="campo"/><br />
-				<div id="mensaje1" class="errores">Falta NOMBRE</div>
-
-				<label>Password</label><br />
-				<input type="text" id="itPassword" class="campo"/><br />
-				<div id="mensaje2" class="errores">Falta PASSWORD</div>
-
-				<label>Asunto</label><br />
-				<input type="text" id="itAsunto" class="campo"/><br />
-				<div id="mensaje3" class="errores">Falta ASUNTO</div>
-
-				<input type="submit" id="bEnviar" value="Entrar" class="boton"/>
-			</form>
-		</div>
 	</body>
 </html>
