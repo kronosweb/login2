@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
+		
 		<meta charset="utf-8">	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/login.css">
 		<title>Inicio y validacion con JQuery</title>
 		
-		
-		<link rel="stylesheet" type="text/css" href="login1.css">
-
-	
-
 	</head>
 	<body>
-		<div id="container">
+		<div id="container" class="jumbotron loginbox">
 			<form id="miFormulario">
 				<label>Nombre</label><br />
-				<input type="text" id="itNombre" class="campo"/><br />
-				<div id="mensaje1" class="errores">Falta NOMBRE</div>
+				<input type="text" id="itNombre" class="form-control"/><br />
+				<div id="mensaje1"Ingresar class="errores">Falta NOMBRE</div>
 
 				<label>Password</label><br />
-				<input type="text" id="itPassword" class="campo"/><br />
+				<input type="text" id="itPassword" class="form-control"/><br />
 				<div id="mensaje2" class="errores">Falta PASSWORD</div>
 
-				<label>Asunto</label><br />
-				<input type="text" id="itAsunto" class="campo"/><br />
-				<div id="mensaje3" class="errores">Falta ASUNTO</div>
-
-				<input type="submit" id="bEnviar" value="Entrar" class="boton"/>
+				<button type="button" id="bEnviar" value="Entrar" class="btn btn-success">Ingresar</button> 
 			</form>
 		</div>
 
@@ -43,6 +38,8 @@
 					if (password == "") {
 						$("#mensaje2").fadeIn();
 						return false;
+					}else{
+						$("#mensaje2").fadeOut();
 					}
 				}
 			});
